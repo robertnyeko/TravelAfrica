@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" href="logo2.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".hamburger").click(function(){
+			   $(".wrapper").toggleClass("collapse");
+			});
+		});
+	</script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="title"><img src="logo2.png"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="db.html">
+                        <span class="icon"><i class="fa fa-home"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-bullseye"></i></span>
+                        <span class="title">Tour plan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fab fa-safari"></i></span>
+                        <span class="title">Safaris</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="title">Reservations</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-question-circle"></i></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-cog"></i></span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-sign-out-alt"></i></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu();"><i class="fa fa-bars"></i></div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class="fa fa-search"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="Robert.jpg">
+                </div>
+            </div> 
+            <div class="details">
+                <div class="adminDashboard">
+                    <div class="cardHeader">
+                        <h2>Welcome to Admin dashboard</h2>
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </div>
+    <script>
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+            
+        toggle.onclick = function(){
+        navigation.classList.toggle('active');
+        main.classList.toggle('active');
+        }
+
+        //Add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink(){
+            list.forEach((item)=>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item)=>
+        item.addEventListener('mouseover',activeLink));
+    
+    </script>
+</body>
+</html>
